@@ -15,3 +15,10 @@ free_amount = dataframe[dataframe['Price'] == 0.0]['Price'].count()
 total_amount = dataframe['Price'].count()
 free_apps_procente = round(free_amount * 100 / total_amount, 2)
 print(str(free_apps_procente) + "%", "- free apps")
+
+print("\n-------------------------------------------------\n")
+# dataframe.info()
+a = dataframe.groupby(by=['Type', 'Category'])['Rating'].agg(['min', 'max', 'mean', 'count'])
+print(a)
+
+
